@@ -26,12 +26,24 @@ function Row({isLargeRow, title, id, fetchUrl}) {
     setMovies(request.data.results);
   }
 
-  const handleClick = (movie) => {
-    console.log('movie->',movie)
-    setModalOpen(true);
-    setMovieSelected(movie)
-  }
+  const getMediaType = (movie) => {
+    if (id === 'NO') {
+      return 'tv';
+    } else {
+      return movie.media_type || (movie.first_air_date ? 'tv' : 'movie');
+    }
+  };
+  
 
+  const handleClick = (movie) => {
+    console.log('movie->', movie);
+    setModalOpen(true);
+    setMovieSelected({
+      ...movie,
+      media_type: getMediaType(movie),
+    });
+  };
+  
   return (
     <section className='row' key={id}>
       <h2>{title}</h2>

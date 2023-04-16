@@ -1,0 +1,33 @@
+.container{
+    .authInput{
+      width: 100%;
+      margin-bottom: 10px;padding: 10px;
+      font-size: 12px; color: #000;
+      justify-content: center;
+      background: #333;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      line-height: 20px;
+      &.authSubmit{
+        background: #e50914; color: #fff;
+        text-align: center;cursor: pointer;
+        justify-content: center;
+      }
+    }
+    .authError{color: tomato;text-align: center;font-weight: 500;font-size: 12px;
+  
+    }
+  }
+  .authSwitch{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #e50914;
+    cursor: pointer;
+  }
+  
+  
+  

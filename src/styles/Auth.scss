@@ -1,0 +1,53 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://repository-images.githubusercontent.com/299409710/b42f7780-0fe1-11eb-8460-e459acd20fb4');
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+
+  .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #00000079;
+    padding: 50px;
+
+    h1{
+      padding-bottom: 30px;
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .auth-btn {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin: 1rem 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    
+      .facebook{
+        padding-left: 10px;
+        width: 30px;
+      }
+      .google{
+        padding-left: 10px;
+        width: 20px;
+      }
+    
+      &:hover {
+        background-color: #b81d24;
+      }
+    }
+  }
+
+}

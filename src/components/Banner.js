@@ -7,10 +7,13 @@ import styled from 'styled-components';
 function Banner() {
     const [movie, setMovie] = useState([]);
     const [isClicked, setIsClicked] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+
 
     useEffect(() =>{
         fetchData()
     },[])
+    
 
     const fetchData =  async () => {
         const request = await axios.get(requests.fetchNowPlaying);
@@ -46,13 +49,24 @@ if(!isClicked){
                 <button className='banner__button play' onClick={() => setIsClicked(true)}>
                     play
                 </button>
-                <button className='banner__button info'>
+                <button className='banner__button info' onClick={() => setIsExpanded(!isExpanded)}>
                     More Information
                 </button>
             </div>
             <p className='banner__description'>
                 {truncate(movie.overview,100)}
             </p>
+
+            {/* 추가정보 */}
+            {isExpanded && (
+            <div className='banner__extraInfo'>
+            <p>출시일: {movie.release_date}</p>
+            <p>평점: {movie.vote_average}</p>
+            <p>런타임: {movie.runtime} 분</p>
+            <p>장르: {movie.genres && movie.genres.map(genre => genre.name).join(', ')}</p>
+            </div>
+            )}
+
         </div>
         <div className='banner--fadeBottom'></div>
     </header>
